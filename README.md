@@ -29,7 +29,7 @@
 * **Client (192.168.56.11):** Установлен клиент, настроен доступ по SSH-ключам.
 
 Файл `Vagrantfile`:
-```ruby
+```bash
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
@@ -51,7 +51,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "client" do |box|
     box.vm.network "private_network", ip: "192.168.56.11"
-    box.vm.provider "virtualbox" do |vb| 
+    box.vm.provider "virtualbox" do |vb|
         vb.memory = "2048"
     end
   end
