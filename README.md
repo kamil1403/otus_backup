@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://avatars.githubusercontent.com/u/10831416?v=4" alt="BorgBackup Logo" width="150">
-</p>
+</p> 
 
 ## ![Lesson](https://img.shields.io/badge/Lesson-otus__backup-0A84FF?style=for-the-badge&logo=linux&logoColor=white&labelColor=111827)![Author](https://img.shields.io/badge/Author-Kamil%20Ibragimov-10B981?style=for-the-badge&logo=github&logoColor=white&labelColor=111827)![Date](https://img.shields.io/badge/Date-15.12.2025-F59E0B?style=for-the-badge&logo=calendar&logoColor=white&labelColor=111827)
 
