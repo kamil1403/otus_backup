@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/kamil1403/otus_backup/blob/main/screenshots/backup_logo.png" width="300">
+  <img src="https://github.com/kamil1403/otus_backup/blob/main/screenshots/backup_logo.png" width="900">
 </p>
 
 ## ![Lesson](https://img.shields.io/badge/Lesson-otus__backup-0A84FF?style=for-the-badge&logo=linux&logoColor=white&labelColor=111827)![Author](https://img.shields.io/badge/Author-Kamil%20Ibragimov-10B981?style=for-the-badge&logo=github&logoColor=white&labelColor=111827)![Date](https://img.shields.io/badge/Date-15.12.2025-F59E0B?style=for-the-badge&logo=calendar&logoColor=white&labelColor=111827)
