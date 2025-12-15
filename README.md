@@ -42,7 +42,6 @@ Vagrant.configure("2") do |config|
     box.vm.network "private_network", ip: "192.168.56.10"
     box.vm.provider "virtualbox" do |vb|
       vb.memory = "2048"
-      # Создание и подключение диска для бэкапов
       unless File.exist?("disk.vdi")
         vb.customize ['createhd', '--filename', 'disk.vdi', '--size', '2048']
       end
