@@ -60,33 +60,23 @@ end
 ```
 
 <a id="two"></a>
-🧰 Шаг 2 - Скрипт бэкапа
-Скрипт /usr/local/bin/backup.sh на клиенте. Реализовано:
-
-Логирование в syslog (тег borg-backup).
-
-Политика очистки: храним 90 дней daily, 12 месяцев monthly.
+## 🧰 Шаг 2 - Скрипт бэкапа
+Скрипт /usr/local/bin/backup.sh на клиенте. 
 ```bash
 #!/bin/bash
 
 export BORG_REPO="borg@192.168.56.10:/var/backup/client"
-export BORG_PASSPHRASE="123" 
-LOG_TAG="borg-backup"
+export BORG_PASSPHRASE="123"
 
-# Создание бэкапа
-echo "Starting backup..." | logger -t $LOG_TAG
-borg create --stats --list ::"etc-{now:%Y-%m-%d_%H%M}" /etc 2>&1 | logger -t $LOG_TAG
+# 1. Создаем бэкап папки /etc
+borg create ::"etc-{now:%Y-%m-%d_%H%M}" /etc
 
-# Очистка старых копий
-echo "Pruning old backups..." | logger -t $LOG_TAG
-borg prune --keep-daily=90 --keep-monthly=12 -y 2>&1 | logger -t $LOG_TAG
-
-echo "Backup finished." | logger -t $LOG_TAG
-Добавлено в Cron: */5 * * * * root /usr/local/bin/backup.sh
+# 2. Удаляем старые (оставляем последние 5 штук для теста)
+borg prune --keep-last=5
 ```
 
 <a id="three"></a>
-🧰 Шаг 3 - Тест восстановления
+## 🧰 Шаг 3 - Тест восстановления
 Моделирование аварии: удаление конфигурационного файла /etc/fstab.
 ```bash
 # 1. Удаление файла
